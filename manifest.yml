@@ -1,0 +1,12 @@
+---
+applications:
+  - name: react-image-tile-editor
+    memory: 256M
+    buildpacks:
+      - https://github.com/cloudfoundry/nodejs-buildpack.git
+    command: npm run build && npm install -g serve && serve -s dist
+    path: .
+    env:
+      NODE_ENV: production
+      NPM_CONFIG_PRODUCTION: false
+    
